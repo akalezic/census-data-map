@@ -14,7 +14,6 @@ export default async function handler(
 ) {
   // Getting the statename from the url route params
   const { stateName } = req.query;
-  console.log(stateName);
   // Connect to MongoDB
   const db = await connectToDatabase();
   // Get the FIPS code for the state
@@ -43,7 +42,6 @@ export default async function handler(
       throw new Error('Failed to fetch census data');
     }
     const censusData = await response.json();
-    console.log(censusData)
     const geojsonCollection = db.collection('geojson');
     // const geojsonData = await geojsonCollection.find({ _id: new ObjectId(result.StateFIPS) });
     
@@ -99,7 +97,13 @@ export default async function handler(
       // If no match is found, return the original feature
       return feature;
     });
-    res.status(200).json({ mergedData, statePopulation });
+
+    // Create the GeoJSON FeatureCollection
+    const geoJsonFeatureCollection = {
+      type: "FeatureCollection",
+      features: mergedData,
+    };
+    res.status(200).json({ geoJsonFeatureCollection, statePopulation });
   } catch (error) {
     console.error(error);
     res.status(500).json({ data: null, error: 'Internal Server Error' });

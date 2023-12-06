@@ -8,6 +8,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* Overrides the original padding of the Popup component in the Map */
+.mapboxgl-popup-content {
+	padding: 0 !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -16,4 +21,34 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.map-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  margin-right: 5px;
+}
+
+.legend-label {
+  font-size: 12px;
 }
