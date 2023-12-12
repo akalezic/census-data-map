@@ -1,34 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+1. Once you have opened the repository, navigate to census-data-map in your terminal if it is not open already, so your path should end in census-data-map. For example, I have saved the repository in my root directory, so this is how the path appears to me in the terminal: C:\Users\amela\census-data-map>
+2. When you have navigated to census-data-map in your terminal, run npm install to install all necessary dependencies.
+3. After the npm install process has completed, run the command npm run build in the terminal.
+4. After npm run build has completed, run npm run start in the terminal.
+5. When the terminal displays    - Local:        http://localhost:3000 navigate to the url in your browser
+6. You can view the map and data for different states by typing the state name after the url (ex. http://localhost:3000/illinois) or using the select bar on the home page (http://localhost:3000)
+
 FIPS mapping source: https://github.com/ChuckConnell/articles/blob/master/fips2county.tsv
-First, run the development server:
-
-```bash
-npm i
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+GeoJSON source: https://raw.githubusercontent.com/kjhealy/us-county/master/data/geojson/gz_2010_us_050_00_5m.json
